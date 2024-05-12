@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+
+
+{% block title %}
+  My Food Truck - List of all members
+{% endblock %}
+
+
+{% block content %}
+  <h1>All Members</h1>
+  <p>Members of my first Django Project!</p>
+
+
+  <h2>List View</h2>
+  <ul>
+    {% for x in mymembers %}
+      <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h2>Table View</h2>
+  <table>
+    <thead>
+      <td><strong>Name</strong></td>
+      <td><strong>Email</strong></td>
+    </thead>
+    {% for x in mymembers %}
+      <tr>
+        <td><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></td>
+        <td>{{ x.email }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+{% endblock %}
+
+
+{% block footer %}
+  <p>This all members page is created using master template</p>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "master.html" %}
+
+
+{% block title %}
+  {{ mymember.firstname }}
+{% endblock %}
+
+
+{% block content %}
+  <h1>{{ mymember.firstname }} {{ mymember.lastname }}</h1>
+  <p>This is the information of {{ mymember.firstname }}</p>
+  <ul>
+    <li>Email: {{ mymember.email }}</li>
+  </ul>
+
+  <form action="/members">
+    <input type="submit" value="Back to Members" />
+  </form>
+{% endblock %}
+
+
+{% block footer %}
+  <p>This member's information page is created using master template</p>
+{% endblock %}
